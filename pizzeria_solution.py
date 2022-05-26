@@ -23,7 +23,7 @@ def get_max_number_of_pizza_deliveries(N, queue):
                 matrix_border_checker(queue, current_x - 1, current_y, N, current_maximum_distance, identifier)
                 matrix_border_checker(queue, current_x, current_y + 1, N, current_maximum_distance, identifier)
                 matrix_border_checker(queue, current_x, current_y - 1, N, current_maximum_distance, identifier)
-    matrix_printer(matrix)
+    # matrix_printer(matrix)
     return max_pizza_deliveries
 
 
@@ -87,90 +87,4 @@ def matrix_printer(matrix):
 
 
 if __name__ == '__main__':
-    # arguments_parser()
-    # max number of pizza deliveries are 2
-    # N = 5
-    # X1, Y1, R1 = 3, 3, 2
-    # X2, Y2, R2 = 1, 1, 2
-    # queue = [[X1 - 1, Y1 - 1, R1, 1], [X2 - 1, Y2 - 1, R2, 2]]
-    # [1, 1, 2, 0, 0]
-    # [1, 2, 1, 1, 0]
-    # [2, 1, 1, 1, 1]
-    # [0, 1, 1, 1, 0]
-    # [0, 0, 1, 0, 0]
-
-    # # max number of pizza deliveries are 3
-
-    # N = 5
-    # X1, Y1, R1 = 3, 3, 2
-    # X2, Y2, R2 = 1, 1, 2
-    # X3, Y3, R3 = 3, 1, 1
-    # queue = [[X1 - 1, Y1 - 1, R1, 1], [X2 - 1, Y2 - 1, R2,  2], [X3 - 1, Y3 - 1, R3, 3]]
-
-    # [1, 2, 3, 1, 0]
-    # [1, 2, 2, 1, 0]
-    # [2, 1, 1, 1, 1]
-    # [0, 1, 1, 1, 0]
-    # [0, 0, 1, 0, 0]
-
-    # max number of pizza deliveries are 2
-    # N = 5
-    # X1, Y1, R1 = 3, 3, 1
-    # X2, Y2, R2 = 1, 1, 2
-    # X3, Y3, R3 = 3, 1, 2
-    # queue = [[X1 - 1, Y1 - 1, R1,  1], [X2 - 1, Y2 - 1, R2, 2], [X3 - 1, Y3 - 1, R3,  3]]
-    #
-    # [2, 2, 2, 1, 1]
-    # [1, 2, 2, 1, 0]
-    # [1, 1, 2, 1, 0]
-    # [0, 0, 1, 0, 0]
-    # [0, 0, 0, 0, 0]
-
-    # max number of pizza deliveries are 2
-    # N = 5
-    # X1, Y1, R1 = 1, 1, 2
-    # X2, Y2, R2 = 5, 1, 2
-    # X3, Y3, R3 = 1, 5, 2
-    # X4, Y4, R4 = 5, 5, 2
-    # queue = [[X1 - 1, Y1 - 1, R1,  1], [X2 - 1, Y2 - 1, R2,  2], [X3 - 1, Y3 - 1, R3,  3], [X4 - 1, Y4 - 1, R4,  4]]
-    # [1, 1, 2, 1, 1]
-    # [1, 1, 0, 1, 1]
-    # [2, 0, 0, 0, 2]
-    # [1, 1, 0, 1, 1]
-    # [1, 1, 2, 1, 1]
-
-    # max number of pizza deliveries are 1
-    # N = 5
-    # X1, Y1, R1 = 1, 1, 0
-    #
-    # queue = [[X1 - 1, Y1 - 1, R1, 1]]
-    # [1, 0, 0, 0, 0]
-    # [0, 0, 0, 0, 0]
-    # [0, 0, 0, 0, 0]
-    # [0, 0, 0, 0, 0]
-    # [0, 0, 0, 0, 0]
-
-    # max number of pizza deliveries are 4
-    # N = 5
-    # X1, Y1, R1 = 1, 1, 5
-    # X2, Y2, R2 = 5, 1, 5
-    # X3, Y3, R3 = 1, 5, 5
-    # X4, Y4, R4 = 5, 5, 5
-    # queue = [[X1 - 1, Y1 - 1, R1, 1], [X2 - 1, Y2 - 1, R2, 2], [X3 - 1, Y3 - 1, R3, 3], [X4 - 1, Y4 - 1, R4, 4]]
-    # [3, 3, 2, 3, 3]
-    # [3, 3, 4, 3, 3]
-    # [2, 4, 4, 4, 2]
-    # [3, 3, 4, 3, 3]
-    # [3, 3, 2, 3, 3]
-
-    # max number of pizza deliveries are 1
-    # N = 5
-    # X1, Y1, R1 = 1, 1, 36
-    # queue = [[X1 - 1, Y1 - 1, R1, 1]]
-    # [1, 1, 1, 1, 1]
-    # [1, 1, 1, 1, 1]
-    # [1, 1, 1, 1, 1]
-    # [1, 1, 1, 1, 1]
-    # [1, 1, 1, 1, 1]
-
-    print(get_max_number_of_pizza_deliveries(N, queue))
+    arguments_parser()
