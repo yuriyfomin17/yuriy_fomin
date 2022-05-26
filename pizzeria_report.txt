@@ -1,14 +1,13 @@
 Brief thoughts:
 
     I decided to use queue data structure and breadth first search algorithm to solve this task.
-    From problem description we need to visit every point in city matrix where pizza can be delivered from nearby pizzeria.
+    From problem description we need to visit every point in city matrix where pizza can be delivered from nearby pizzeria. This should be done for all pizzerias.
     Hence, I believe that queue (with first in and first out approach) is ideal as it allows to process every city matrix point where pizza can be delivered.
 
     <--------------------------------------------------------------------Start Algorithm for each pizzeria----------------------------------------------------------->
         1. When first delivery point element of the queue is removed. Matrix city point value is incremented.
         2. North, south, west and east adjacent delivery points are analyzed
-
-        3.    If it happens that pizza delivery guy can't visit the adjacent point due to
+        3. If it happens that pizza delivery guy can't visit the adjacent point due to
                 a. His distance radius is small
                 b. or he has already visited this point
                 next adjacent point won't be added to the queue.
@@ -29,6 +28,6 @@ Time Complexity Analysis: Each pizzeria will visit at most one point in city mat
                           At the same time lower bound order of growth can be O(P * 1) given that radius of delivery for each pizzeria is 0
 
 Space Complexity Analysis: For each pizzeria bfs algorithm would need to traverse every delivery point. Hence, space complexity in queue is
-                           O(( DV1) + (DV2) +  (DV3) + .... + ( DVN) ) where  DV is number of delivery points for 1, 2, 3 ... Nth pizzeria.
+                           O(( DV1) + (DV2) +  (DV3) + .... + ( DVN) ) where  DV is number of delivery points for 1, 2, 3 ... Nth pizzeria respectively.
                            Each pizzeria has different number of delivery points, so queue can take at most sum of all delivery points for all pizzerias.
-                           This is the worst case since queue can hold all delivery points for all pizzerias
+                           This is the worst case since queue can hold all delivery points for all pizzerias.
