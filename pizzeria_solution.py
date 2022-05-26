@@ -26,7 +26,7 @@ def get_max_number_of_pizza_deliveries(N, queue):
             matrix_border_checker(queue, current_x - 1, current_y, N, current_maximum_distance, identifier)
             matrix_border_checker(queue, current_x, current_y + 1, N, current_maximum_distance, identifier)
             matrix_border_checker(queue, current_x, current_y - 1, N, current_maximum_distance, identifier)
-    matrix_printer(matrix)
+    # matrix_printer(matrix)
     return max_pizza_deliveries
 
 
@@ -85,7 +85,7 @@ def arguments_processor(contents):
 
 # <================================== End Arguments Parser =============================================>
 
-
+# matrix printer for visual representation
 def matrix_printer(matrix):
     for row in matrix:
         print(row)
