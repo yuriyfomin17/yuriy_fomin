@@ -8,27 +8,30 @@ def get_max_number_of_pizza_deliveries(N, queue):
     max_pizza_deliveries = 0
     while len(queue) != 0:
         current_pizza_delivery = queue.pop(0)
+        # get current x and y coordinates, current delivery radius and delivery identifier for the delivery point
         current_x, current_y, current_maximum_distance, identifier = current_pizza_delivery[0], \
                                                                      current_pizza_delivery[1], \
                                                                      current_pizza_delivery[2], \
                                                                      current_pizza_delivery[3]
         matrix_identifier = matrix_identifiers[current_x][current_y]
-
+        # if point is delivery point is already visited then just remove it from the queue
         if identifier not in matrix_identifier:
-            matrix[current_y][current_x] += 1
-            max_pizza_deliveries = max(max_pizza_deliveries, matrix[current_x][current_y])
+            matrix[current_y][current_x] += 1 # increment city delivery matrix point to record that pizza can be delivered to that point
+            max_pizza_deliveries = max(max_pizza_deliveries, matrix[current_x][current_y]) # find maximum pizza delivery by comparing it with the city matrix delivery point
             matrix_identifier.add(identifier)
-            if current_maximum_distance > 0:
-                matrix_border_checker(queue, current_x + 1, current_y, N, current_maximum_distance, identifier)
-                matrix_border_checker(queue, current_x - 1, current_y, N, current_maximum_distance, identifier)
-                matrix_border_checker(queue, current_x, current_y + 1, N, current_maximum_distance, identifier)
-                matrix_border_checker(queue, current_x, current_y - 1, N, current_maximum_distance, identifier)
+
+            # north, west, east and south adjacent delivery points are analyzed. I.E. if they are not crossing borders and their delivery radius is bigger then zero. THen
+            # delivery point can be added to the queue
+            matrix_border_checker(queue, current_x + 1, current_y, N, current_maximum_distance, identifier)
+            matrix_border_checker(queue, current_x - 1, current_y, N, current_maximum_distance, identifier)
+            matrix_border_checker(queue, current_x, current_y + 1, N, current_maximum_distance, identifier)
+            matrix_border_checker(queue, current_x, current_y - 1, N, current_maximum_distance, identifier)
     # matrix_printer(matrix)
     return max_pizza_deliveries
 
 
 def matrix_border_checker(queue, new_x, new_y, N, current_maximum_distance, identifier):
-    if 0 <= new_x < N and 0 <= new_y < N and current_maximum_distance >= 0:
+    if 0 <= new_x < N and 0 <= new_y < N and current_maximum_distance > 0:
         queue.append([new_x, new_y, current_maximum_distance - 1, identifier])
 
 
