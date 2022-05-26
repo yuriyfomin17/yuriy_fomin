@@ -45,6 +45,7 @@ def arguments_parser():
     while True:
         try:
             line = input()
+
             if line.strip() != '': contents.append(line.replace('a', ''))
             if 'a' in line.lower(): break
         except:
@@ -64,9 +65,11 @@ def arguments_processor(contents):
             content = contents[i].split(' ')
 
             if i == 0:
+                # first line would always have Number of rows and columns N
                 N = int(content[0])
 
             else:
+                # add starting pizzeria points to the queue
                 queue_element = [int(content[0]) - 1, int(content[1]) - 1, int(content[2]), identifier_counter]
                 identifier_counter += 1
                 queue.append(queue_element)
